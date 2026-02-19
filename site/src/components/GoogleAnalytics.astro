@@ -1,0 +1,45 @@
+---
+/**
+ * GoogleAnalytics — consent-gated GA4 integration
+ *
+ * The gtag script is never loaded until the user explicitly accepts analytics.
+ * Works with the existing consent.ts / CookieBanner / ConsentManager setup.
+ */
+const GA_ID = 'G-3SFP8MWRVX';
+---
+
+<script define:vars={{ GA_ID }}>
+  import { analyticsAllowed } from '../lib/consent';
+
+  let initialized = false;
+
+  function initGA() {
+    if (initialized) return;
+    initialized = true;
+
+    // Inject the gtag loader script
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+    document.head.appendChild(script);
+
+    // Set up dataLayer and gtag
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', GA_ID, { anonymize_ip: true });
+  }
+
+  // Fire immediately if user already consented in a previous session
+  if (analyticsAllowed()) {
+    initGA();
+  }
+
+  // Fire when consent is granted during this session
+  window.addEventListener('consent-updated', () => {
+    if (analyticsAllowed()) {
+      initGA();
+    }
+  });
+</script>
