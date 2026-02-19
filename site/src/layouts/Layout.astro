@@ -7,7 +7,7 @@ interface Props {
 }
 
 const { title, description = 'Behavioral interview preparation guide for engineering management and technical leadership roles.' } = Astro.props;
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 
 <!doctype html>
