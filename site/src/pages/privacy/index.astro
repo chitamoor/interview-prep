@@ -1,0 +1,145 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const LAST_UPDATED = 'February 17, 2026';       // TODO: update when you change this page
+---
+
+<Layout
+  title="Privacy Policy"
+  description="Privacy Policy for Interview Prep — how we collect, use, and protect your data."
+>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 py-16">
+    <div class="mb-10">
+      <h1 class="text-4xl font-extrabold text-white mb-3">Privacy Policy</h1>
+      <p class="text-slate-500 text-sm">Last updated: {LAST_UPDATED}</p>
+    </div>
+
+    <div class="prose-dark space-y-8">
+
+      <section>
+        <h2>1. What This Site Is</h2>
+        <p>
+          Interview Prep is a free, open-source behavioral interview preparation guide for
+          engineering managers and technical leaders. It is a static website with no user
+          accounts, no login, and no server-side data processing.
+        </p>
+      </section>
+
+      <section>
+        <h2>2. Data We Collect</h2>
+        <table>
+          <thead>
+            <tr><th>Type</th><th>Purpose</th><th>Stored where</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Cookie consent preference</td>
+              <td>Remember your privacy choice</td>
+              <td>Your browser (localStorage)</td>
+            </tr>
+            <tr>
+              <td>Page views &amp; interactions</td>
+              <td>Understand usage (analytics only)</td>
+              <td>Analytics provider — only if you consent</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          We do <strong>not</strong> collect names, email addresses, payment information, or
+          any other personally identifiable information. No account is required to use this site.
+        </p>
+      </section>
+
+      <section>
+        <h2>3. Cookies &amp; localStorage</h2>
+        <table>
+          <thead>
+            <tr><th>Key</th><th>Category</th><th>Purpose</th><th>Expires</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>gdpr_consent</code></td>
+              <td>Strictly Necessary</td>
+              <td>Stores your cookie preference so we don't ask again</td>
+              <td>Until you clear site data</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          Analytics cookies are only set after you click <em>Accept All</em> or enable Analytics
+          in <em>Cookie Preferences</em>. You can change your preference at any time via the
+          "Cookie Preferences" link in the page footer.
+        </p>
+      </section>
+
+      <section>
+        <h2>4. Analytics</h2>
+        <p>
+          If you consent to analytics cookies, we may use an analytics service to collect
+          aggregate, anonymous usage data such as page views and click events. No personal
+          profiles are built from this data, and it is not sold to third parties.
+        </p>
+        <p>
+          Analytics are disabled by default and are only activated after your explicit consent.
+        </p>
+      </section>
+
+      <section>
+        <h2>5. Third-Party Services</h2>
+        <table>
+          <thead>
+            <tr><th>Service</th><th>Purpose</th><th>Privacy Policy</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>GitHub Pages</td>
+              <td>Website hosting</td>
+              <td><a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" class="text-violet-400 hover:text-violet-300" target="_blank" rel="noopener noreferrer">GitHub Privacy Statement</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>6. Your Rights</h2>
+        <p>Under GDPR and similar regulations, you have the right to:</p>
+        <ul>
+          <li><strong>Access</strong> — request a copy of any data we hold about you</li>
+          <li><strong>Erasure</strong> — request deletion of your data (clearing browser localStorage removes all stored data on our end)</li>
+          <li><strong>Withdraw consent</strong> — change your cookie preferences at any time via the footer link</li>
+          <li><strong>Complain</strong> — lodge a complaint with your local data protection authority</li>
+        </ul>
+        <p>
+          Because this is a static site with no server-side storage, clearing your browser's
+          site data effectively removes all data associated with your visit.
+        </p>
+      </section>
+
+      <section>
+        <h2>7. Data Retention</h2>
+        <p>
+          Your consent preference is stored locally in your browser until you clear your site
+          data or change your preference. We retain no server-side records of individual visitors.
+        </p>
+      </section>
+
+      <section>
+        <h2>8. Changes to This Policy</h2>
+        <p>
+          We may update this policy occasionally. When we do, we will update the "Last updated"
+          date at the top and, if the changes materially affect how we use your data, we will
+          bump the consent version so you are asked to re-consent.
+        </p>
+      </section>
+
+      <section>
+        <h2>9. Contact</h2>
+        <p>
+          Questions about this policy? Open an issue at{' '}
+          <a href="https://github.com/chitamoor/interview-prep/issues" class="text-violet-400 hover:text-violet-300" target="_blank" rel="noopener noreferrer">github.com/chitamoor/interview-prep/issues</a>.
+        </p>
+      </section>
+
+    </div>
+  </div>
+</Layout>

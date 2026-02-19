@@ -1,0 +1,32 @@
+---
+/**
+ * GdprFooter — persistent GDPR links strip
+ *
+ * Always visible at the bottom of every page.
+ * "Cookie Preferences" opens the ConsentManager dialog.
+ *
+ * Portability: copy this component into any Astro project.
+ */
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const year = new Date().getFullYear();
+---
+
+<div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 text-xs text-slate-600 mt-6">
+  <span>© {year} Interview Prep</span>
+  <a href={`${base}privacy/`} class="hover:text-slate-400 transition-colors">Privacy Policy</a>
+  <a href={`${base}terms/`} class="hover:text-slate-400 transition-colors">Terms</a>
+  <button
+    id="gdpr-open-manager"
+    class="hover:text-slate-400 transition-colors cursor-pointer"
+  >
+    Cookie Preferences
+  </button>
+</div>
+
+<script>
+  const btn = document.getElementById('gdpr-open-manager');
+  btn?.addEventListener('click', () => {
+    const dialog = document.getElementById('consent-manager-dialog') as HTMLDialogElement | null;
+    dialog?.showModal();
+  });
+</script>

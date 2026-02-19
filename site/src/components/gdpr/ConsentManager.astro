@@ -1,0 +1,220 @@
+---
+/**
+ * ConsentManager — granular cookie preference dialog
+ *
+ * Uses the native HTML <dialog> element (no framework needed).
+ * Reads and writes consent via consent.ts.
+ *
+ * Portability: copy this component + consent.ts into any Astro project.
+ */
+---
+
+<dialog
+  id="consent-manager-dialog"
+  aria-label="Cookie preferences"
+  class="consent-dialog backdrop:bg-black/60 backdrop:backdrop-blur-sm p-0 rounded-2xl border border-white/10 bg-[#16161e] text-white shadow-2xl w-full max-w-md mx-auto"
+>
+  <div class="p-6">
+    <!-- Header -->
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-lg font-semibold text-white">Cookie Preferences</h2>
+      <button
+        id="consent-dialog-close"
+        aria-label="Close"
+        class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-all"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Category rows -->
+    <div class="space-y-4 mb-6">
+
+      <!-- Strictly Necessary (locked on) -->
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/4 border border-white/8">
+        <div class="flex-1">
+          <div class="font-medium text-white text-sm mb-0.5">Strictly Necessary</div>
+          <div class="text-xs text-slate-400 leading-relaxed">
+            Required for the site to function. Cannot be disabled.
+            Includes auth sessions and security tokens.
+          </div>
+        </div>
+        <div class="flex-shrink-0 mt-0.5">
+          <span class="inline-flex items-center gap-1 text-xs text-slate-400 bg-white/8 px-2 py-1 rounded-full">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+            Always on
+          </span>
+        </div>
+      </div>
+
+      <!-- Analytics -->
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/4 border border-white/8">
+        <div class="flex-1">
+          <div class="font-medium text-white text-sm mb-0.5">Analytics</div>
+          <div class="text-xs text-slate-400 leading-relaxed">
+            Helps us understand how visitors use the site (page views, interactions).
+            No personal data is sold.
+          </div>
+        </div>
+        <div class="flex-shrink-0 mt-0.5">
+          <button
+            id="toggle-analytics"
+            role="switch"
+            aria-checked="false"
+            class="consent-toggle relative w-10 h-6 rounded-full transition-all duration-200 bg-white/15 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:ring-offset-[#16161e]"
+          >
+            <span class="consent-toggle-thumb absolute top-1 left-1 w-4 h-4 rounded-full bg-white transition-all duration-200"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Marketing -->
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/4 border border-white/8">
+        <div class="flex-1">
+          <div class="font-medium text-white text-sm mb-0.5">Marketing</div>
+          <div class="text-xs text-slate-400 leading-relaxed">
+            Used to show relevant ads and track campaign performance.
+            Currently not used on this site.
+          </div>
+        </div>
+        <div class="flex-shrink-0 mt-0.5">
+          <button
+            id="toggle-marketing"
+            role="switch"
+            aria-checked="false"
+            class="consent-toggle relative w-10 h-6 rounded-full transition-all duration-200 bg-white/15 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:ring-offset-[#16161e]"
+          >
+            <span class="consent-toggle-thumb absolute top-1 left-1 w-4 h-4 rounded-full bg-white transition-all duration-200"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action buttons -->
+    <div class="flex flex-col sm:flex-row gap-2">
+      <button
+        id="consent-reject-all"
+        class="flex-1 text-sm text-slate-300 hover:text-white px-4 py-2.5 rounded-lg border border-white/15 hover:border-white/30 hover:bg-white/8 transition-all"
+      >
+        Reject All
+      </button>
+      <button
+        id="consent-accept-all"
+        class="flex-1 text-sm text-slate-300 hover:text-white px-4 py-2.5 rounded-lg border border-white/15 hover:border-white/30 hover:bg-white/8 transition-all"
+      >
+        Accept All
+      </button>
+      <button
+        id="consent-save"
+        class="flex-1 text-sm font-semibold text-white px-4 py-2.5 rounded-lg bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 transition-all shadow-lg shadow-violet-900/30"
+      >
+        Save Preferences
+      </button>
+    </div>
+  </div>
+</dialog>
+
+<style>
+  /* Toggle active state */
+  .consent-toggle[aria-checked="true"] {
+    background: linear-gradient(135deg, #7c3aed, #9333ea);
+  }
+  .consent-toggle[aria-checked="true"] .consent-toggle-thumb {
+    transform: translateX(16px);
+  }
+
+  /* Native dialog centering */
+  dialog {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+  }
+
+  dialog::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+  }
+</style>
+
+<script>
+  import { getConsent, acceptAll, rejectAll, saveConsent } from '../../lib/consent';
+
+  const dialog = document.getElementById('consent-manager-dialog') as HTMLDialogElement | null;
+  const closeBtn = document.getElementById('consent-dialog-close');
+  const analyticsToggle = document.getElementById('toggle-analytics') as HTMLButtonElement | null;
+  const marketingToggle = document.getElementById('toggle-marketing') as HTMLButtonElement | null;
+  const acceptAllBtn = document.getElementById('consent-accept-all');
+  const rejectAllBtn = document.getElementById('consent-reject-all');
+  const saveBtn = document.getElementById('consent-save');
+
+  function setToggle(btn: HTMLButtonElement | null, on: boolean) {
+    if (!btn) return;
+    btn.setAttribute('aria-checked', String(on));
+  }
+
+  function getToggle(btn: HTMLButtonElement | null): boolean {
+    return btn?.getAttribute('aria-checked') === 'true';
+  }
+
+  function syncToggles() {
+    const consent = getConsent();
+    setToggle(analyticsToggle, consent.categories.analytics);
+    setToggle(marketingToggle, consent.categories.marketing);
+  }
+
+  // Sync state on load
+  syncToggles();
+
+  // Sync state every time the dialog is opened (native <dialog> has no 'show' event,
+  // so we patch showModal to run syncToggles before opening)
+  if (dialog) {
+    const _original = dialog.showModal.bind(dialog);
+    dialog.showModal = () => { syncToggles(); _original(); };
+  }
+
+  analyticsToggle?.addEventListener('click', () => {
+    setToggle(analyticsToggle, !getToggle(analyticsToggle));
+  });
+
+  marketingToggle?.addEventListener('click', () => {
+    setToggle(marketingToggle, !getToggle(marketingToggle));
+  });
+
+  acceptAllBtn?.addEventListener('click', () => {
+    acceptAll();
+    setToggle(analyticsToggle, true);
+    setToggle(marketingToggle, true);
+    dialog?.close();
+  });
+
+  rejectAllBtn?.addEventListener('click', () => {
+    rejectAll();
+    setToggle(analyticsToggle, false);
+    setToggle(marketingToggle, false);
+    dialog?.close();
+  });
+
+  saveBtn?.addEventListener('click', () => {
+    saveConsent({
+      analytics: getToggle(analyticsToggle),
+      marketing: getToggle(marketingToggle),
+    });
+    dialog?.close();
+  });
+
+  closeBtn?.addEventListener('click', () => {
+    dialog?.close();
+  });
+
+  // Close on backdrop click
+  dialog?.addEventListener('click', (e) => {
+    if (e.target === dialog) dialog.close();
+  });
+
+  // Re-sync when preferences are updated externally (e.g. Accept All in banner)
+  window.addEventListener('consent-updated', syncToggles);
+</script>

@@ -1,0 +1,99 @@
+---
+/**
+ * CookieBanner — GDPR cookie consent banner
+ *
+ * Appears at the bottom of the screen on first visit.
+ * Hides permanently once the user makes a choice.
+ * Opens ConsentManager dialog when "Manage" is clicked.
+ *
+ * Portability: copy this component + consent.ts into any Astro project.
+ */
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+---
+
+<div
+  id="cookie-banner"
+  role="dialog"
+  aria-label="Cookie consent"
+  aria-live="polite"
+  class="cookie-banner fixed bottom-0 left-0 right-0 z-[100] hidden"
+>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 sm:py-5">
+    <div class="glass rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 shadow-2xl shadow-black/40 border border-white/10">
+      <div class="flex-1 min-w-0">
+        <p class="text-white font-semibold text-sm mb-1">🍪 We use cookies</p>
+        <p class="text-slate-400 text-sm leading-relaxed">
+          We use essential cookies to make this site work. With your consent, we may also use
+          analytics cookies to understand how you use it.
+          <a href={`${base}privacy/`} class="text-violet-400 hover:text-violet-300 underline underline-offset-2 transition-colors">
+            Privacy Policy
+          </a>
+        </p>
+      </div>
+      <div class="flex items-center gap-2 flex-shrink-0">
+        <button
+          id="cookie-manage"
+          class="text-sm text-slate-400 hover:text-white px-3 py-2 rounded-lg hover:bg-white/8 transition-all"
+        >
+          Manage
+        </button>
+        <button
+          id="cookie-reject"
+          class="text-sm text-slate-300 hover:text-white px-4 py-2 rounded-lg border border-white/15 hover:border-white/30 hover:bg-white/8 transition-all"
+        >
+          Reject All
+        </button>
+        <button
+          id="cookie-accept"
+          class="text-sm font-semibold text-white px-4 py-2 rounded-lg bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 transition-all shadow-lg shadow-violet-900/30"
+        >
+          Accept All
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { hasDecided, acceptAll, rejectAll } from '../../lib/consent';
+
+  const banner = document.getElementById('cookie-banner');
+  const acceptBtn = document.getElementById('cookie-accept');
+  const rejectBtn = document.getElementById('cookie-reject');
+  const manageBtn = document.getElementById('cookie-manage');
+
+  function hideBanner() {
+    banner?.classList.add('hidden');
+  }
+
+  function showBanner() {
+    banner?.classList.remove('hidden');
+    banner?.classList.add('flex');
+  }
+
+  // Show only if user has not decided yet
+  if (!hasDecided()) {
+    showBanner();
+  }
+
+  acceptBtn?.addEventListener('click', () => {
+    acceptAll();
+    hideBanner();
+  });
+
+  rejectBtn?.addEventListener('click', () => {
+    rejectAll();
+    hideBanner();
+  });
+
+  manageBtn?.addEventListener('click', () => {
+    // Open the ConsentManager dialog
+    const dialog = document.getElementById('consent-manager-dialog') as HTMLDialogElement | null;
+    dialog?.showModal();
+  });
+
+  // Re-check if preferences are saved from the manager
+  window.addEventListener('consent-updated', () => {
+    hideBanner();
+  });
+</script>
