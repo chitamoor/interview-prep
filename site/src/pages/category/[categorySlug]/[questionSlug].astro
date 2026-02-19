@@ -65,6 +65,8 @@ const title = sections.find(s => s.level === 1)?.heading ?? q.title;
 const whyAsked = sections.find(s => s.heading === 'Why This Is Asked');
 const keyPoints = sections.find(s => s.heading === 'Key Points to Cover');
 const tips = sections.find(s => s.heading === 'Tips');
+const exampleResponse = sections.find(s => s.heading === 'Example Response');
+const companiesSection = sections.find(s => s.heading === 'Companies Known to Ask This');
 const starSections = sections.filter(s => s.level === 3 && ['Situation', 'Task', 'Action', 'Result'].includes(s.heading));
 
 const starColors: Record<string, string> = {
@@ -150,9 +152,28 @@ const nextQ = qIndex < cat.questions.length - 1 ? cat.questions[qIndex + 1] : nu
 
     <!-- Tips -->
     {tips && (
-      <div class="glass rounded-2xl p-6 mb-10 border-l-4 border-amber-500">
+      <div class="glass rounded-2xl p-6 mb-6 border-l-4 border-amber-500">
         <h2 class="text-sm font-semibold text-amber-400 uppercase tracking-wider mb-3">💡 Tips</h2>
         <div class="prose-dark" set:html={marked(tips.content)} />
+      </div>
+    )}
+
+    <!-- Example Response -->
+    {exampleResponse && (
+      <div class="glass rounded-2xl p-6 mb-6 border-l-4 border-emerald-500">
+        <div class="flex items-center gap-2 mb-4">
+          <h2 class="text-sm font-semibold text-emerald-400 uppercase tracking-wider">✍️ Example Response</h2>
+          <span class="text-xs text-slate-600 bg-white/5 rounded-full px-2 py-0.5">STAR format</span>
+        </div>
+        <div class="prose-dark space-y-3" set:html={marked(exampleResponse.content)} />
+      </div>
+    )}
+
+    <!-- Companies Known to Ask This -->
+    {companiesSection && (
+      <div class="glass rounded-2xl p-6 mb-10 border-l-4 border-blue-500">
+        <h2 class="text-sm font-semibold text-blue-400 uppercase tracking-wider mb-4">🏢 Companies Known to Ask This</h2>
+        <div class="prose-dark" set:html={marked(companiesSection.content)} />
       </div>
     )}
 

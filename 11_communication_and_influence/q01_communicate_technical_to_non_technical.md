@@ -29,3 +29,24 @@ _[What was the outcome? Use metrics where possible. What did you learn?]_
 
 - Give a concrete example: "When explaining our migration to microservices, I compared it to..." 
 - Avoid saying "I dumb it down"—instead, "I translate to business impact and outcomes"
+
+## Example Response
+
+**Situation:** At a healthcare tech company, our engineering team needed to migrate our core platform from a monolith to microservices. The CFO and board were skeptical—they saw it as a costly rewrite with no immediate customer benefit. I was the engineering manager presenting the case to the executive team.
+
+**Task:** I had to explain the technical rationale and business value in terms that non-technical leaders could understand and act on.
+
+**Action:** I led with outcomes, not architecture. Instead of discussing service boundaries or event-driven design, I framed it as: "Today, a single bug can take down our entire platform. After this migration, we isolate failures—one service can have issues without affecting the rest. That means fewer outages and faster recovery." I used an analogy: "Think of it like a restaurant. Right now we have one kitchen that does everything—if the grill breaks, we're closed. We're moving to separate stations—if the grill breaks, we can still serve salads and desserts." I prepared a one-pager with three bullets: risk reduction, deployment speed, and cost of delay. I invited questions and checked for understanding: "Does that make sense, or should I go deeper on any part?"
+
+**Result:** We got approval for the migration. The CFO later said it was the first time he'd understood why we needed a technical investment. I learned that the key is to lead with impact and risk, use analogies that resonate, and always verify that the message landed.
+
+## Companies Known to Ask This
+
+| Company | Variation / Focus |
+|---------|------------------|
+| Amazon | Customer Obsession — "How do you explain technical decisions to non-technical stakeholders?" |
+| Google | Collaboration |
+| Meta | Cross-functional alignment |
+| Microsoft | Customer focus |
+| Apple | Customer delight, cross-functional depth |
+| Salesforce | Customer success |

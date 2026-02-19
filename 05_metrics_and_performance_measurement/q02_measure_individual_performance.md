@@ -30,3 +30,25 @@ _[What was the outcome? Use metrics where possible. What did you learn?]_
 - Avoid metrics that incentivize individual heroics at the expense of teamwork
 - Emphasize calibration and 360 feedback where appropriate
 - Show how you tie performance to growth plans and career development
+
+## Example Response
+
+**Situation:** I managed a team of 8 backend engineers at a Series B startup. We had no formal performance system—reviews were subjective and people felt unclear about expectations. High performers felt underrecognized, and one engineer was struggling but didn't know why.
+
+**Task:** I needed to design a fair, transparent way to measure individual performance that supported growth, not just evaluation.
+
+**Action:** I created a performance framework with three pillars: impact (what you shipped and its business effect), growth (how you're developing skills and helping others), and collaboration (how you work with the team). I used 360 feedback from peers and stakeholders, calibrated with other managers to ensure consistency. I avoided velocity or LOC as primary metrics—instead I looked at cycle time on owned work, code review quality, and mentorship. For the struggling engineer, I gave specific, actionable feedback with a 90-day improvement plan and weekly check-ins. I tied all feedback to growth plans and career conversations.
+
+**Result:** Within six months, eNPS improved from 32 to 58. The struggling engineer turned around and was promoted within a year. I learned that people want clarity and fairness—when criteria are transparent and tied to development, performance conversations become growth conversations.
+
+## Companies Known to Ask This
+
+| Company | Variation / Focus |
+|---------|------------------|
+| Amazon | Hire & Develop the Best — "How do you assess and develop individuals?" |
+| Google | Calibration, 360 feedback, growth mindset |
+| Meta | High performance, impact at scale, candid feedback |
+| Microsoft | Growth mindset, development focus |
+| Netflix | High performance, candor, direct feedback |
+| LinkedIn | Professional growth, learning agility |
+| Salesforce | Trust, equality and inclusion in evaluation |

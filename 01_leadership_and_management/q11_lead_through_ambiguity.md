@@ -29,3 +29,24 @@ _[What was the outcome? Use metrics where possible. What did you learn?]_
 
 - Use a real scenario (reorg, pivot, market change, pandemic) to ground your answer
 - Emphasize communication and psychological safety—people need to feel supported in uncertainty
+
+## Example Response
+
+**Situation:** At a travel-tech company, the pandemic hit and our core business collapsed overnight. Revenue dropped 70%, and leadership was exploring pivots—we didn't know if we'd focus on domestic travel, B2B, or something else. My team of 12 was anxious: Would we have jobs? What should we work on? Everything felt up in the air.
+
+**Task:** I needed to provide direction and stability when I didn't have clear answers myself. I had to keep the team focused, engaged, and psychologically safe while we waited for strategic clarity.
+
+**Action:** I was transparent about what I knew and didn't know. I told the team that leadership was evaluating options and we'd have more clarity in 4–6 weeks—and that until then, our job was to stay ready and deliver on what we could control. I identified short-term work that had value regardless of the pivot: tech debt paydown, improving our API for potential partners, and documentation. I increased communication—weekly all-hands with Q&A, and I made myself available for 1:1s whenever anyone needed to talk. I also advocated for the team with leadership, pushing for clarity and sharing what I was hearing from the team so they weren't forgotten.
+
+**Result:** We retained every engineer through the uncertainty. When the pivot was announced (B2B focus), we were able to execute quickly because we'd prepared. The team later said the transparency and short-term clarity helped them cope. I learned that in ambiguity, people need honesty, something concrete to work on, and a leader who's present—even when you don't have the full picture.
+
+## Companies Known to Ask This
+
+| Company | Variation / Focus |
+|---------|------------------|
+| Amazon | Bias for Action, Think Big — "Tell me about a time you led through uncertainty" |
+| Google | Navigating ambiguity, structuring unclear situations |
+| Meta | Moving fast, scale, cross-functional alignment |
+| Microsoft | Execution under pressure, growth mindset |
+| Stripe | Moving fast in ambiguity, technical judgment |
+| Uber | Entrepreneurship, ownership, building for scale |

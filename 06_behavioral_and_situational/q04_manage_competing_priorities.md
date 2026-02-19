@@ -30,3 +30,24 @@ _[What was the outcome? Use metrics where possible. What did you learn?]_
 - Be specific about the competing priorities—don't give a generic answer
 - Show that you involved stakeholders in the trade-off conversation
 - Emphasize that you made a clear decision rather than trying to do everything poorly
+
+## Example Response
+
+**Situation:** I led a platform team at a Series B company. We had three competing demands: a critical security remediation (regulatory deadline in 8 weeks), a major product feature the CEO had promised to a key customer (6 weeks), and foundational tech debt that was causing weekly incidents. We had capacity for maybe two of the three.
+
+**Task:** I needed to prioritize, get alignment, and protect the team from being pulled in three directions.
+
+**Action:** I built a trade-off matrix: impact, urgency, risk of delay, and dependencies. I scheduled a meeting with the CEO, VP Product, and our security lead. I presented the options clearly: "We can do two of these well, or all three poorly. Here's my recommendation: security first (non-negotiable), then the customer feature with a reduced scope, tech debt in the next quarter." I proposed a phased scope for the feature—MVP in 6 weeks, full scope in 10. The CEO pushed back initially. I shared the data: our velocity, incident frequency, and the cost of context-switching. We agreed on the phased approach. I communicated the decision to the team and shielded them from ad-hoc requests.
+
+**Result:** We delivered security on time, the customer feature (MVP) in 6 weeks, and tech debt in the following quarter. Zero regulatory issues. I learned that saying no requires data, stakeholder alignment, and a clear recommendation—not just a list of options.
+
+## Companies Known to Ask This
+
+| Company | Variation / Focus |
+|---------|------------------|
+| Amazon | Bias for Action, Deliver Results — "Tell me about a time you managed competing priorities" |
+| Google | Navigating ambiguity, prioritization |
+| Meta | Moving fast, impact at scale |
+| Microsoft | Execution under pressure |
+| Stripe | Moving fast in ambiguity |
+| Uber | Ownership, entrepreneurship |

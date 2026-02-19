@@ -30,3 +30,24 @@ _[What was the outcome? Use metrics where possible. What did you learn?]_
 - Give an example where someone's dissent improved a decision
 - Show that you distinguish between constructive disagreement and unproductive conflict
 - Emphasize that you make the final call when needed—disagreement doesn't mean endless debate
+
+## Example Response
+
+**Situation:** My team was deciding on an architecture for a new service. The majority favored a monolith—faster to ship. Two engineers argued for microservices—better long-term. The discussion was getting heated, and the majority was dismissive of the dissenters.
+
+**Task:** I needed to create space for the minority view and ensure we made a good decision, not just a fast one.
+
+**Action:** I explicitly thanked the two engineers for pushing back: "I want to hear the counterargument." I asked them to present their case—trade-offs, risks, timeline. I then asked the majority to respond to the specific points, not the people. I ran a structured debate: 10 minutes each side, then 5 minutes of questions. I introduced a "pre-mortem": "Assume we choose the monolith and it fails in 18 months. What went wrong?" That surfaced real risks. We ended up with a hybrid: start as a modular monolith with clear boundaries, with a path to split later. I made the final call and explained my reasoning. I made sure the dissenters felt heard—I said in the room that their pushback improved the decision.
+
+**Result:** We shipped on time, and the modular design made a later split straightforward. I learned that dissent improves decisions when you create structure for it and make it safe. The goal isn't consensus—it's the best decision, with everyone able to commit.
+
+## Companies Known to Ask This
+
+| Company | Variation / Focus |
+|---------|------------------|
+| Amazon | Have Backbone Disagree & Commit — "How do you encourage diverse perspectives?" |
+| Google | Googleyness, collaboration |
+| Meta | Hard calls, impact at scale |
+| Microsoft | Growth mindset, collaboration |
+| Netflix | Candor, direct feedback |
+| Stripe | Technical judgment, cross-functional work |

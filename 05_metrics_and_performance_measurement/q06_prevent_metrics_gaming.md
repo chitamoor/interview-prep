@@ -29,3 +29,24 @@ _[What was the outcome? Use metrics where possible. What did you learn?]_
 
 - Give an example of a metric that was gamed and how you addressed it
 - Show you treat metrics as signals, not goals—the real goal is better outcomes
+
+## Example Response
+
+**Situation:** At a previous company, we measured "story points completed per sprint." Teams started inflating point estimates—a 2-point task became 5 points. Velocity went up, but delivery didn't. We had created a perverse incentive.
+
+**Task:** I was asked to redesign our metrics to drive real improvement without gaming.
+
+**Action:** I moved to a balanced scorecard: cycle time (hard to game—it's measured from commit to production), deployment frequency, change failure rate, and customer-reported bugs. I avoided single-metric targets—we looked at trends across all four. I also added qualitative inputs: blameless post-mortems, team health surveys, and stakeholder NPS. I made it explicit in team norms that we valued honest reporting over hitting numbers—and I modeled that by celebrating when someone surfaced a problem early. When I noticed a team optimizing for deployment frequency by shipping trivial changes, I raised it in a retrospective and we adjusted: we started tracking "meaningful deployments" (features or fixes with customer impact).
+
+**Result:** Gaming dropped significantly. Cycle time became our primary improvement driver, and we saw a 35% reduction in time-to-production. I learned that Goodhart's Law is real—when a measure becomes a target, it ceases to be useful. Multiple indicators and a culture of honesty matter more than any single metric.
+
+## Companies Known to Ask This
+
+| Company | Variation / Focus |
+|---------|------------------|
+| Amazon | Earn Trust, Insist on Highest Standards — "How do you prevent metrics gaming?" |
+| Google | Integrity, data-driven without gaming |
+| Meta | Impact at scale, honest measurement |
+| Microsoft | Growth mindset, customer focus |
+| Netflix | Candor, high performance without gaming |
+| Stripe | Technical judgment, moving fast with integrity |

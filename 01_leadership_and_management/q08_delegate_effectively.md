@@ -29,3 +29,24 @@ _[What was the outcome? Use metrics where possible. What did you learn?]_
 
 - Include an example where delegation led to someone stepping up or growing
 - Acknowledge a time you over-delegated or under-delegated and what you learned
+
+## Example Response
+
+**Situation:** At a health-tech company, I managed a team of 7. I had a tendency to take on complex technical decisions myself because I was the most senior—but that created a bottleneck and didn't develop the team. We had a critical migration project coming up, and I knew I couldn't own it and everything else. I needed to delegate meaningfully.
+
+**Task:** I had to delegate the migration ownership to a senior engineer while maintaining appropriate oversight—enough to catch risks, not so much that I was micromanaging.
+
+**Action:** I chose an engineer who had strong execution skills but hadn't led a project of this scope. I set clear outcomes: complete the migration with zero data loss, within 8 weeks, with a rollback plan. I defined checkpoints: a design review at week 2, a dry-run at week 5, and a go/no-go at week 7. I made myself available for unblocking but didn't attend every meeting—I asked them to escalate decisions that had cross-team impact. When they hit a blocker with another team, I stepped in to unblock, then stepped back. I also made it explicit that mistakes were acceptable as long as we learned—that reduced their fear of failure.
+
+**Result:** The migration completed on time with no incidents. The engineer grew significantly and later led two more major initiatives. I freed up 15–20 hours per week for strategic work. I learned that delegation works best when you're explicit about outcomes, checkpoints, and escalation—and when you create psychological safety for the delegatee to own it.
+
+## Companies Known to Ask This
+
+| Company | Variation / Focus |
+|---------|------------------|
+| Amazon | Hire & Develop the Best, Ownership — "Tell me about a time you developed someone through delegation" |
+| Google | Leadership, scaling impact |
+| Meta | Building high-performing teams, moving fast |
+| Microsoft | Motivating teams, growth mindset |
+| Uber | Ownership, entrepreneurship |
+| Stripe | Technical judgment, building reliable systems |

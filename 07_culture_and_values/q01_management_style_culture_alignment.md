@@ -30,3 +30,25 @@ _[What was the outcome? Use metrics where possible. What did you learn?]_
 - Research the company's culture and values before the interview—reference them explicitly
 - Avoid generic labels; give concrete examples of how your style shows up in behavior
 - Show that you can flex—your style may evolve based on team needs and context
+
+## Example Response
+
+**Situation:** I've managed teams at a Fortune 500 (hierarchical, process-heavy) and a Series A startup (chaotic, fast-moving). My natural style is coaching and servant leadership—I prefer to empower and develop people. But I've learned that style must adapt to context.
+
+**Task:** I needed to articulate my style and show how it aligns with different cultures while staying authentic.
+
+**Action:** I describe my style as "situational servant leader": I default to coaching, listening, and removing blockers, but I tighten the reins when clarity or speed is critical. At the Fortune 500, I added more structure—clear RACI matrices, written decision records—because the org needed it. At the startup, I was more hands-on and decisive because the team needed direction. When I interview, I research the company's values. For a "move fast" culture, I emphasize bias for action and delegation. For "customer obsession," I share how I've tied team goals to customer outcomes. I give concrete examples: "I run weekly 1:1s focused on growth, not status—that reflects my belief that development drives performance."
+
+**Result:** I've been told I "fit" well at both companies. I learned that alignment isn't about changing who you are—it's about showing how your values map to theirs and demonstrating flexibility when the context demands it.
+
+## Companies Known to Ask This
+
+| Company | Variation / Focus |
+|---------|------------------|
+| Amazon | Leadership Principles alignment — "What's your management style?" |
+| Google | Googleyness, culture fit |
+| Meta | Scale, moving fast, impact |
+| Microsoft | Growth mindset, collaboration |
+| Netflix | Culture fit, Freedom & Responsibility |
+| Apple | Excellence, deep collaboration |
+| Airbnb | Mission alignment, belonging |
