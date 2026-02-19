@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg: #0f0f13;
+    --surface: #16161e;
+    --surface-2: #1e1e2a;
+    --border: #2a2a3a;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    letter-spacing: -0.02em;
+  }
+
+  /* Markdown content styles */
+  .prose-dark h1 { @apply text-2xl font-bold text-white mb-4 mt-8; }
+  .prose-dark h2 { @apply text-xl font-semibold text-white mb-3 mt-7 pb-2 border-b border-white/10; }
+  .prose-dark h3 { @apply text-lg font-semibold text-slate-200 mb-2 mt-5; }
+  .prose-dark p { @apply text-slate-300 leading-relaxed mb-4; }
+  .prose-dark ul { @apply list-disc list-inside space-y-1 mb-4 text-slate-300; }
+  .prose-dark li { @apply text-slate-300; }
+  .prose-dark em { @apply text-slate-400 not-italic; }
+  .prose-dark strong { @apply text-white font-semibold; }
+  .prose-dark code { @apply bg-white/10 text-purple-300 px-1.5 py-0.5 rounded text-sm; }
+  .prose-dark blockquote { @apply border-l-4 border-purple-500 pl-4 italic text-slate-400; }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #a78bfa, #60a5fa, #34d399);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}

@@ -1,6 +1,11 @@
 # Personal response files (contain your own STAR method answers)
 *_response.md
 
+# Site build artifacts
+site/node_modules/
+site/dist/
+site/.astro/
+
 # OS files
 .DS_Store
 Thumbs.db

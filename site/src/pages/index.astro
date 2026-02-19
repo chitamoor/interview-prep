@@ -1,0 +1,134 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { categories } from '../data/categories';
+
+const base = import.meta.env.BASE_URL;
+const totalQuestions = categories.reduce((sum, c) => sum + c.questions.length, 0);
+---
+
+<Layout title="Behavioral Interview Preparation Guide">
+  <!-- Hero -->
+  <section class="relative overflow-hidden pt-20 pb-24 px-4 sm:px-6">
+    <!-- Background glow -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-violet-600/20 rounded-full blur-[120px]"></div>
+      <div class="absolute top-20 left-1/4 w-[300px] h-[300px] bg-blue-600/10 rounded-full blur-[80px]"></div>
+      <div class="absolute top-10 right-1/4 w-[300px] h-[300px] bg-pink-600/10 rounded-full blur-[80px]"></div>
+    </div>
+
+    <div class="relative max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 text-sm text-slate-400 mb-8">
+        <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+        Engineering Management · Technical Leadership
+      </div>
+
+      <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
+        Ace Your
+        <span class="gradient-text"> Behavioral</span>
+        <br />Interview
+      </h1>
+
+      <p class="text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+        {totalQuestions} carefully curated questions across {categories.length} categories, each with
+        STAR method templates — designed for engineering managers and technical leaders.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="#categories"
+          class="inline-flex items-center gap-2 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 text-white font-semibold px-8 py-3.5 rounded-xl transition-all duration-200 shadow-lg shadow-violet-900/40"
+        >
+          Browse Categories
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
+        <a
+          href="https://github.com/chitamoor/interview-prep"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 glass hover:bg-white/10 text-white font-semibold px-8 py-3.5 rounded-xl transition-all duration-200"
+        >
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+          </svg>
+          View on GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- Stats bar -->
+    <div class="relative max-w-3xl mx-auto mt-16 grid grid-cols-3 gap-4">
+      {[
+        { value: String(totalQuestions), label: 'Questions' },
+        { value: String(categories.length), label: 'Categories' },
+        { value: 'STAR', label: 'Method' },
+      ].map(stat => (
+        <div class="glass rounded-2xl p-5 text-center">
+          <div class="text-3xl font-extrabold gradient-text mb-1">{stat.value}</div>
+          <div class="text-sm text-slate-500">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- STAR Method callout -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 mb-16">
+    <div class="glass rounded-2xl p-8">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center text-sm">✨</div>
+        <h2 class="text-lg font-semibold text-white">How to Use This Guide</h2>
+      </div>
+      <div class="grid sm:grid-cols-4 gap-6">
+        {[
+          { letter: 'S', word: 'Situation', desc: 'Set the scene. What was happening, what was at stake?', color: 'from-violet-500 to-purple-500' },
+          { letter: 'T', word: 'Task', desc: 'What was your specific responsibility or challenge?', color: 'from-blue-500 to-cyan-500' },
+          { letter: 'A', word: 'Action', desc: 'What specific steps did YOU take? Be detailed.', color: 'from-emerald-500 to-teal-500' },
+          { letter: 'R', word: 'Result', desc: 'What was the outcome? Use metrics where possible.', color: 'from-orange-500 to-amber-500' },
+        ].map(step => (
+          <div class="flex flex-col gap-2">
+            <div class={`w-10 h-10 rounded-xl bg-gradient-to-br ${step.color} flex items-center justify-center font-bold text-white text-lg`}>
+              {step.letter}
+            </div>
+            <div class="font-semibold text-white">{step.word}</div>
+            <div class="text-sm text-slate-400 leading-relaxed">{step.desc}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories grid -->
+  <section id="categories" class="max-w-6xl mx-auto px-4 sm:px-6 pb-24">
+    <div class="flex items-center justify-between mb-8">
+      <h2 class="text-3xl font-bold text-white">Categories</h2>
+      <span class="text-sm text-slate-500">{categories.length} topics</span>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {categories.map(cat => (
+        <a
+          href={`${base}category/${cat.slug}/`}
+          class="group glass rounded-2xl p-6 hover:bg-white/8 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-black/20"
+        >
+          <div class="flex items-start justify-between mb-4">
+            <div class={`w-12 h-12 rounded-xl bg-gradient-to-br ${cat.color} flex items-center justify-center text-xl shadow-lg`}>
+              {cat.emoji}
+            </div>
+            <span class="text-xs font-medium text-slate-500 bg-white/5 rounded-full px-2.5 py-1">
+              {cat.questions.length} questions
+            </span>
+          </div>
+          <h3 class="font-bold text-white text-lg mb-2 group-hover:gradient-text transition-all">{cat.title}</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">{cat.description}</p>
+          <div class="mt-4 flex items-center gap-1 text-sm text-slate-500 group-hover:text-violet-400 transition-colors">
+            View questions
+            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+</Layout>
