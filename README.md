@@ -44,3 +44,95 @@ A comprehensive collection of behavioral interview questions organized by catego
 Each category folder contains:
 - `questions.md` — Full list of questions with category description
 - `q##_short_name.md` — Individual Q&A files with STAR method templates
+
+---
+
+## Contributing
+
+Contributions are welcome! Whether it's fixing a typo, improving an example response, or adding a new question — all help is appreciated.
+
+### How to contribute
+
+1. Fork this repository
+2. Create a branch: `git checkout -b add/my-question`
+3. Make your changes (see guidelines below)
+4. Open a Pull Request with a clear description
+
+### Content guidelines
+
+- Follow the existing question file format (Why Asked → Key Points → STAR Template → Tips → Example Response → Companies Known to Ask This)
+- Keep example responses realistic and role-appropriate for engineering management / technical leadership
+- Cite sources where possible for the "Companies Known to Ask This" section
+- One question per file, named `q##_short_description.md`
+
+### Adding your own personal responses
+
+Each question file has a companion `*_response.md` file for your own private answers. These are excluded from git by default via `.gitignore` — they will never be committed to the repo.
+
+To use them:
+1. Open any `q##_*.md` file
+2. Create a matching `q##_*_response.md` file in the same folder
+3. Write your personal STAR response — it stays local to your machine
+
+---
+
+## Customizing the Site
+
+The site lives in the `site/` directory and is built with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com).
+
+### Run locally
+
+```bash
+cd site
+npm install
+npm run dev       # http://localhost:4321/interview-prep/
+npm run build     # production build → site/dist/
+```
+
+### Change styles
+
+All global styles, color variables, and markdown rendering styles are in:
+```
+site/src/styles/global.css
+```
+
+The dark theme colors (`--bg`, `--surface`, `--text`, etc.) are defined as CSS variables at the top of that file — update them to retheme the entire site.
+
+### Change layout and navigation
+
+The shared layout (nav, footer, GDPR banner) is in:
+```
+site/src/layouts/Layout.astro
+```
+
+### Add or modify categories and questions
+
+All category and question metadata is in one file:
+```
+site/src/data/categories.ts
+```
+
+Add a new entry to the `categories` array and a corresponding entry in `folderMap` to wire up a new category.
+
+### Add Google Analytics
+
+1. Create a GA4 property at [analytics.google.com](https://analytics.google.com)
+2. Get your Measurement ID (`G-XXXXXXXXXX`)
+3. Update `site/src/components/GoogleAnalytics.astro` with your ID
+
+GA is consent-gated — it only loads after the user accepts analytics cookies.
+
+### Deploy to GitHub Pages
+
+Deployment is automatic via GitHub Actions on every push to `main`. The workflow is in:
+```
+.github/workflows/deploy.yml
+```
+
+To deploy manually: `gh workflow run deploy.yml`
+
+---
+
+## License
+
+[MIT](./LICENSE) © [chitamoor](https://github.com/chitamoor)
