@@ -116,11 +116,14 @@ Add a new entry to the `categories` array and a corresponding entry in `folderMa
 
 ### Add Google Analytics
 
+If you fork this repo and want to track your own visitors:
+
 1. Create a GA4 property at [analytics.google.com](https://analytics.google.com)
 2. Get your Measurement ID (`G-XXXXXXXXXX`)
-3. Update `site/src/components/GoogleAnalytics.astro` with your ID
+3. Open `site/src/components/GoogleAnalytics.astro` and replace the `GA_ID` value with your own
+4. Commit and push — the GitHub Actions workflow will rebuild and deploy automatically
 
-GA is consent-gated — it only loads after the user accepts analytics cookies.
+GA is consent-gated out of the box — the tracking script only loads after the visitor accepts analytics cookies. No additional setup needed.
 
 ### Deploy to GitHub Pages
 
