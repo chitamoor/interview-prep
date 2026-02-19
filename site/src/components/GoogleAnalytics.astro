@@ -1,45 +1,52 @@
 ---
 /**
- * GoogleAnalytics — consent-gated GA4 integration
+ * GoogleAnalytics — Consent Mode v2 (GDPR-compliant GA4)
  *
- * The gtag script is never loaded until the user explicitly accepts analytics.
- * Works with the existing consent.ts / CookieBanner / ConsentManager setup.
+ * The gtag.js script is always present in the HTML so Google can verify the tag,
+ * but all consent signals default to 'denied'. Data only flows after the user
+ * explicitly accepts analytics via the cookie banner / consent manager.
+ *
+ * This follows Google's official Consent Mode v2 pattern.
  */
 const GA_ID = 'G-3SFP8MWRVX';
 ---
 
+<!-- Google tag (gtag.js) — Consent Mode v2 -->
+<script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
 <script define:vars={{ GA_ID }}>
   import { analyticsAllowed } from '../lib/consent';
 
-  let initialized = false;
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+  window.gtag = gtag;
 
-  function initGA() {
-    if (initialized) return;
-    initialized = true;
+  // Default all consent to denied — no data collected until user accepts
+  gtag('consent', 'default', {
+    analytics_storage: 'denied',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    wait_for_update: 500,
+  });
 
-    // Inject the gtag loader script
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
-    document.head.appendChild(script);
+  gtag('js', new Date());
+  gtag('config', GA_ID, { anonymize_ip: true });
 
-    // Set up dataLayer and gtag
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { window.dataLayer.push(arguments); }
-    window.gtag = gtag;
-    gtag('js', new Date());
-    gtag('config', GA_ID, { anonymize_ip: true });
+  function grantAnalytics() {
+    gtag('consent', 'update', {
+      analytics_storage: 'granted',
+    });
   }
 
-  // Fire immediately if user already consented in a previous session
+  // Grant immediately if user already consented in a previous session
   if (analyticsAllowed()) {
-    initGA();
+    grantAnalytics();
   }
 
-  // Fire when consent is granted during this session
+  // Grant when consent is given during this session
   window.addEventListener('consent-updated', () => {
     if (analyticsAllowed()) {
-      initGA();
+      grantAnalytics();
     }
   });
 </script>
