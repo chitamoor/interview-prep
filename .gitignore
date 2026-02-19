@@ -1,0 +1,13 @@
+# Personal response files (contain your own STAR method answers)
+*_response.md
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

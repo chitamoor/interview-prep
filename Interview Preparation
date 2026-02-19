@@ -1,0 +1,87 @@
+You are a master interviewer and you are helping me prepare for a behavioral interview. You are given a list of categories and examples of questions that are relevant to the behavioral interview. You are to comb through the categories and examples and add relevant examples as you see fit. Most importantly feel free to CRUD the categories and examples based on what you know. As the final output, I am looking for a comprehensive list of questions that are relevant to the behavioral interview.
+I want to create folders files for each category and with that each folder will have a file for the questions and a file for each question and answer.
+
+1. Leadership and Management Questions
+These questions assess your ability to lead and manage a team effectively.
+	•	How do you prioritize tasks and projects for your team?
+	•	How do you handle conflicts within your team?
+	•	Describe a time when you had to manage underperforming team members. How did you handle it?
+	•	How do you ensure your team stays motivated and productive?
+	•	How do you manage stakeholders' expectations while protecting your team from scope creep?
+	•	What’s your approach to setting goals for your team? How do you track progress?
+	•	How do you balance individual growth and team performance?
+
+2. Technical Leadership and Decision-Making
+These questions assess your ability to make sound technical decisions and lead engineering efforts.
+	•	How do you stay updated with new technologies, and how do you decide which technologies to adopt?
+	•	How do you handle technical debt while delivering new features?
+	•	Can you describe a time when you had to make a difficult technical decision? How did you approach it?
+	•	What’s your experience with system design? Can you walk us through a system you designed or improved?
+	•	How do you ensure code quality and maintainability across your team?
+	•	What’s your experience with scaling systems, and how have you approached it in the past?
+
+3. Process and Project Management
+These questions focus on how you manage software development processes and ensure timely delivery.
+	•	What development methodologies have you used? Which one do you prefer and why?
+	•	How do you handle missed deadlines or delays in the project?
+	•	How do you ensure cross-team collaboration in larger projects?
+	•	Describe your process for conducting code reviews and ensuring best practices.
+	•	How do you manage dependencies between teams or projects?
+	•	What tools have you used for project tracking, and how do you ensure transparency in project status?
+
+4. Hiring and Team Building
+These questions assess your ability to build and grow a high-performing team.
+	•	What qualities do you look for when hiring engineers?
+	•	How do you ensure diversity and inclusion in your hiring process?
+	•	How do you onboard new team members?
+	•	Describe a time when you had to grow your team quickly. How did you manage it?
+	•	How do you retain top talent and keep engineers engaged?
+
+5. Metrics and Performance Measurement
+These questions assess how you track team and project performance.
+	•	What key metrics do you use to measure the success of your team?
+	•	How do you measure individual performance in your team?
+	•	How do you know if your team is underperforming, and what steps do you take to address it?
+	•	How do you evaluate the success of a software release?
+
+6. Behavioral and Situational Questions
+These questions help interviewers understand how you handle real-world challenges.
+	•	Describe a time when you faced a significant challenge as a manager. How did you handle it?
+	•	Tell me about a time you disagreed with a senior leader's decision. How did you handle it?
+	•	How do you handle feedback from your team?
+	•	Give an example of a time when you had to manage competing priorities.
+	•	Describe a project that failed. What did you learn from it?
+
+7. Culture and Values
+These questions assess alignment with the company’s culture and values.
+	•	What’s your management style, and how does it align with our company culture?
+	•	How do you ensure that your team embodies the company’s values?
+	•	What’s your approach to fostering innovation within your team?
+	•	How do you ensure psychological safety in your team?
+
+8. Conflict Resolution
+These questions assess how you manage interpersonal and professional conflicts.
+	•	Describe a time when two team members had a conflict. How did you resolve it?
+	•	How do you handle disagreements with product managers or other stakeholders about priorities?
+	•	What’s your approach when an engineer disagrees with a technical decision?
+
+9. Customer and Business Focus
+These questions assess how well you understand the intersection of engineering and business.
+	•	How do you ensure that your engineering efforts align with business goals?
+	•	How do you balance technical excellence with delivering business value quickly?
+	•	Describe a time when you made a technical compromise to meet a business deadline.
+
+10. Scenario-Based Questions
+These are hypothetical questions to assess how you would approach specific challenges.
+	•	You find out that a critical system your team is responsible for will fail in 24 hours. What do you do?
+	•	Your team is consistently missing deadlines. What steps do you take to fix this?
+	•	You need to improve the performance of a legacy system while delivering new features. How do you approach this?
+
+Tips for Answering These Questions
+	•	Use the STAR Method: When answering situational or behavioral questions, structure your response by discussing the Situation, Task, Action, and Result.
+	•	Show Your Leadership Philosophy: Highlight how you empower your team, foster collaboration, and align engineering with business goals.
+	•	Be Data-Driven: Emphasize how you use metrics and data to make decisions and track success.
+	•	Highlight Impact: Focus on the outcomes and value you delivered, not just the processes you followed.
+
+
+
