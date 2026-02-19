@@ -6,6 +6,9 @@ site/node_modules/
 site/dist/
 site/.astro/
 
+# Serena AI assistant (local only)
+.serena/
+
 # OS files
 .DS_Store
 Thumbs.db
