@@ -9,7 +9,7 @@ Turns rough notes into a polished personal STAR response for a behavioral interv
 
 ## Inputs
 
-1. **The question file** — the currently open or referenced `.md` file (e.g., `q01_prioritize_tasks.md`)
+1. **The question file** — explicitly `@`-referenced in the request (e.g., `@q01_prioritize_tasks.md`). If not explicitly referenced, fall back to the currently focused file shown in context. If ambiguous, ask the user which question they want to answer before proceeding.
 2. **The user's rough notes** — provided inline in the request
 
 ## Workflow
@@ -87,7 +87,7 @@ Confirm to the user what was written and which file was updated.
 
 ## Example
 
-**User says:** "create STAR response — my notes: we had 3 competing projects, I used OKRs to rank them, killed the lowest one, team was relieved, shipped the other two on time"
+**User says:** "create STAR response for @q01_prioritize_tasks.md — my notes: we had 3 competing projects, I used OKRs to rank them, killed the lowest one, team was relieved, shipped the other two on time"
 
 **Skill does:**
 1. Reads `q01_prioritize_tasks.md` (currently open)
