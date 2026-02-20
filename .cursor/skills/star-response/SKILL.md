@@ -73,6 +73,11 @@ Before writing, verify the response:
 
 ## Example 1
 
+| | |
+|---|---|
+| **Company / Team** | _[fill in]_ |
+| **Scenario** | _[one-line summary of the situation, e.g. "Two engineers debating MFE dependency strategy"]_ |
+
 ### Situation
 [polished situation paragraph]
 
@@ -96,6 +101,11 @@ Before writing, verify the response:
 ---
 
 ## Example 2
+
+| | |
+|---|---|
+| **Company / Team** | _[fill in]_ |
+| **Scenario** | _[one-line summary of the situation]_ |
 
 ### Situation
 [polished situation paragraph]
