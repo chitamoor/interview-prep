@@ -1,11 +1,12 @@
 ---
 name: star-response
-description: Converts rough personal notes into a polished STAR-format behavioral interview response and writes it to the corresponding _response.md file. Use when the user says "create STAR response", "write my STAR answer", "fill in my response", or wants to populate a response file for a behavioral interview question.
+description: Converts rough personal notes into a polished STAR-format behavioral interview response and writes it to the corresponding _response.md file. Supports multiple examples per question. Use when the user says "create STAR response", "write my STAR answer", "add another example", "add a second story", or wants to populate a response file for a behavioral interview question.
 ---
 
 # STAR Response Generator
 
 Turns rough notes into a polished personal STAR response for a behavioral interview question.
+Supports multiple STAR examples per question — each is appended as a numbered entry.
 
 ## Inputs
 
@@ -22,16 +23,24 @@ Read the question file to extract:
 - **Key Points to Cover** — what a strong answer must include
 - **Tips** — pitfalls to avoid
 
-### Step 2 — Identify the response file
+### Step 2 — Identify the response file and check existing content
 
-The response file is in the **same directory** as the question file. Replace the `.md` extension with `_response.md`:
+The response file is in the **same directory** as the question file. Replace `.md` with `_response.md`:
 
 ```
 q01_prioritize_tasks.md  →  q01_prioritize_tasks_response.md
 q03_handle_conflict.md   →  q03_handle_conflict_response.md
 ```
 
-Read the existing response file to see if there's anything already there worth preserving.
+Read the existing response file and determine its state:
+
+| State | How to detect | Action |
+|---|---|---|
+| **Empty / blank template** | No `## Example` headings present | Write Example 1 as the full file |
+| **Has one example** | Contains `## Example 1` | Append `## Example 2` after the last line |
+| **Has N examples** | Contains `## Example N` | Append `## Example N+1` after the last line |
+
+Never overwrite or remove existing examples.
 
 ### Step 3 — Generate the STAR response
 
@@ -41,7 +50,7 @@ Using the user's rough notes + question context, write a polished first-person S
 - **Task**: The user's specific responsibility or challenge. 1-2 sentences.
 - **Action**: Detailed, first-person actions the user took. Use "I" not "we". Be specific — name tools, frameworks, conversations, decisions. 3-6 sentences. This is the most important section.
 - **Result**: Concrete outcome. Use numbers/metrics wherever the notes hint at them. 2-3 sentences. End with a learning or insight if natural.
-- **Notes**: Capture any follow-up points, variations, or alternative stories from the rough notes that didn't fit the main response.
+- **Notes**: Follow-up points, alternative angles, or metrics to add before the interview.
 
 ### Step 4 — Quality check
 
@@ -54,28 +63,54 @@ Before writing, verify the response:
 
 ### Step 5 — Write the response file
 
-Write the completed response to the `_response.md` file using this exact template:
+**If the file is empty or has only a blank template**, write the full file:
 
 ```markdown
 # My Response: [question text here]
 
-## Situation
+## Example 1
+
+### Situation
 [polished situation paragraph]
 
-## Task
+### Task
 [polished task paragraph]
 
-## Action
+### Action
 [polished action paragraph]
 
-## Result
+### Result
 [polished result paragraph]
 
-## Notes
-[any additional context, follow-up points, or alternative stories from the rough notes]
+### Notes
+[follow-up points, metrics to add, alternative angles]
 ```
 
-Confirm to the user what was written and which file was updated.
+**If the file already has examples**, append after the last line:
+
+```markdown
+
+---
+
+## Example 2
+
+### Situation
+[polished situation paragraph]
+
+### Task
+[polished task paragraph]
+
+### Action
+[polished action paragraph]
+
+### Result
+[polished result paragraph]
+
+### Notes
+[follow-up points, metrics to add, alternative angles]
+```
+
+Confirm to the user what was written, which example number it is, and which file was updated.
 
 ## Tone and Style
 
@@ -85,12 +120,14 @@ Confirm to the user what was written and which file was updated.
 - Engineering management voice — talks about teams, systems, stakeholders, trade-offs
 - If the notes are thin, ask one clarifying question before writing rather than fabricating detail
 
-## Example
+## Examples
 
-**User says:** "create STAR response for @q01_prioritize_tasks.md — my notes: we had 3 competing projects, I used OKRs to rank them, killed the lowest one, team was relieved, shipped the other two on time"
+**Adding a first response:**
+> "create STAR response for @q01_prioritize_tasks.md — my notes: had 3 competing projects, used OKRs to rank them, killed the lowest one, shipped the other two on time"
 
-**Skill does:**
-1. Reads `q01_prioritize_tasks.md` (currently open)
-2. Identifies response file: `q01_prioritize_tasks_response.md`
-3. Generates a polished STAR response from the rough notes
-4. Writes to `q01_prioritize_tasks_response.md`
+→ Writes Example 1 to `q01_prioritize_tasks_response.md`
+
+**Adding a second response to the same question:**
+> "create STAR response for @q01_prioritize_tasks.md — my notes: different story, at previous company, two orgs competing for same team, had to split capacity 60/40"
+
+→ Reads existing file, sees Example 1, appends Example 2
