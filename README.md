@@ -74,6 +74,17 @@ To use them:
 2. Create a matching `q##_*_response.md` file in the same folder
 3. Write your personal STAR response — it stays local to your machine
 
+#### AI-assisted responses (Cursor users)
+
+If you use [Cursor](https://cursor.sh), this repo includes a built-in skill that converts your rough notes into a polished STAR response automatically.
+
+Just say:
+```
+create STAR response for @q01_prioritize_tasks.md — my notes: [your rough notes here]
+```
+
+The skill reads the question's context (why it's asked, key points, tips) and writes a structured first-person STAR response to the `_response.md` file. The skill is in `.cursor/skills/star-response/`.
+
 ---
 
 ## Customizing the Site
