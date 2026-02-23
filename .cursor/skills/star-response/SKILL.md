@@ -43,7 +43,7 @@ Read the existing response file and determine its state:
 | **Has one example** | Contains `## Example 1` | Append `## Example 2` after the last line |
 | **Has N examples** | Contains `## Example N` | Append `## Example N+1` after the last line |
 
-Never overwrite or remove existing examples.
+**Never overwrite or remove existing examples.** When appending, read the full file first, then write the complete file with (existing content + new example block). Do not write only the new example — that would overwrite and lose existing content.
 
 ### Step 3 — Generate the STAR response
 
